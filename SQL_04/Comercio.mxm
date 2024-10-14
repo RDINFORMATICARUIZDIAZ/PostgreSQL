@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><Model version="5.0">
+    <Configuration>
+        <Property name="dialect" value="PostgresDialect"/>
+        <Property name="ALIAS" value="testuser"/>
+        <Property name="DRIVER" value="org.postgresql.Driver"/>
+        <Property name="PASSWORD" value="testuser"/>
+        <Property name="PROMPTFORPASSWORD" value="false"/>
+        <Property name="URL" value="jdbc:postgresql://localhost:5432/laboratorio"/>
+        <Property name="USER" value="testuser"/>
+    </Configuration>
+    <CustomTypes/>
+    <Domains/>
+    <Tables>
+        <Table id="5f80d095-860a-4383-a8b9-25670eec7454" name="Cliente" schema="">
+            <Property name="LOCATION" value="62:24"/>
+            <Comment>TipoDocumento: almacena el tipo de documento del cliente según esta tipología:
+1- Documento de identidad
+2- Documento de residencia
+3- Pasaporte
+
+NumeroCompras: es el número de compras que ha realizado el cliente y se inicializa en 0.
+
+MontoCompras: es el monto de todas las compras realizadas por el cliente y se inicializa en 0.
+
+UltimaModificacion: Fecha de última modificación del registro y se inicializa en la fecha de creación.</Comment>
+            <Attribute datatype="serial" defaultvalue="" extra="" fraction="null" id="bc9a0664-ad68-468d-bfe9-8db4d02c2946" name="idCliente" nullable="false" scale="10" size=""/>
+            <Attribute datatype="varchar" defaultvalue="" extra="" fraction="null" id="7e5f8458-7324-4e67-85c1-f4d620a930e2" name="Nombre" nullable="false" scale="10" size="50"/>
+            <Attribute datatype="int2" defaultvalue="" extra="" fraction="null" id="03f50a99-dde0-4250-ad7b-b94f6bb95de3" name="TipoDocumento" nullable="true" scale="10" size=""/>
+            <Attribute datatype="varchar" defaultvalue="" extra="" fraction="null" id="78fafdf6-2c6c-4ae7-9f75-30e99a048112" name="NumeroDocumento" nullable="true" scale="10" size="20"/>
+            <Attribute datatype="varchar" defaultvalue="" extra="" fraction="null" id="a03c5e27-67dc-4d6a-b48d-a1d9a31b4efd" name="Telefono" nullable="true" scale="10" size="25"/>
+            <Attribute datatype="varchar" defaultvalue="" extra="" fraction="null" id="421627e1-1d66-46ce-a46a-0dc9bb4c81a2" name="Direccion" nullable="true" scale="10" size="150"/>
+            <Attribute datatype="int4" defaultvalue="" extra="" fraction="null" id="8395848f-571e-4959-b4f2-055c91056df0" name="NumeroCompras" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="54c58f3a-fe55-499e-9534-d051440f7126" name="MontoCompras" nullable="false" scale="10" size=""/>
+            <Attribute datatype="timestamp" defaultvalue="" extra="" fraction="null" id="a3e22387-7580-41f4-9e50-fdd33d865545" name="FechaRegistro" nullable="false" scale="10" size=""/>
+            <Attribute datatype="timestamp" defaultvalue="" extra="" fraction="null" id="e26b66ab-95b6-4889-abf9-9328a5b695db" name="UltimaCompra" nullable="true" scale="10" size=""/>
+            <Attribute datatype="timestamp" defaultvalue="" extra="" fraction="null" id="df2b291a-0edd-4ab6-99e8-2fc50d0cedc0" name="UltimaModificacion" nullable="false" scale="10" size=""/>
+            <Index id="f5b1802f-465a-416a-aaae-8257a88a7ce4" indextype="PRIMARYKEY" name="cliente_pk">
+                <Indexattribute attributerefid="bc9a0664-ad68-468d-bfe9-8db4d02c2946" id="8e43d3a9-cf58-408a-833c-1dc77cf9c441"/>
+            </Index>
+        </Table>
+        <Table id="1dccae7f-04c1-4a77-933e-25740176b3a6" name="Producto" schema="">
+            <Property name="LOCATION" value="988:311"/>
+            <Comment>UnidadesVendidas: son las unidades vendidas de un producto y se inicializa en cero.
+
+MontoVendido: total de ventas de un producto y se inicializa en cero.
+
+UltimaModificacion: Fecha de última modificación del registro y se inicializa en la fecha de creación.</Comment>
+            <Attribute datatype="serial" defaultvalue="" extra="" fraction="null" id="e28ce126-2c2b-4e20-a297-8fcee08d244b" name="idProducto" nullable="false" scale="10" size=""/>
+            <Attribute datatype="varchar" defaultvalue="" extra="" fraction="null" id="0a0c3630-e030-4ea4-bdb9-664290ccb719" name="DescripcionCorta" nullable="false" scale="10" size="80"/>
+            <Attribute datatype="varchar" defaultvalue="" extra="" fraction="null" id="0575a21e-8486-4e5b-b7a5-cd6d922ec8ca" name="DescripcionLarga" nullable="true" scale="10" size="250"/>
+            <Attribute datatype="int4" defaultvalue="" extra="" fraction="null" id="8a0da44a-3406-44b5-ba97-9d46a1a29cf3" name="Inventario" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="508477a8-aae8-46b3-8a7d-183ff432b119" name="PrecioCompra" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="094f7653-cfa5-4732-b8dc-cfa2a8acc496" name="PrecioVenta" nullable="false" scale="10" size=""/>
+            <Attribute datatype="numeric" defaultvalue="" extra="" fraction="2" id="43246ead-363e-43c6-8dce-5747da1144e7" name="TasaImpuesto" nullable="false" scale="10" size="5"/>
+            <Attribute datatype="numeric" defaultvalue="" extra="" fraction="2" id="fb9e7f3e-69e6-4efb-86df-8e7d4472a012" name="Descuento" nullable="false" scale="10" size="5"/>
+            <Attribute datatype="int4" defaultvalue="" extra="" fraction="null" id="e14caaea-40d2-45e2-b3ed-825942738e67" name="UnidadesVendidas" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="94871f6d-d26b-4485-b8a8-c73216222322" name="MontoVendido" nullable="false" scale="10" size=""/>
+            <Attribute datatype="timestamp" defaultvalue="" extra="" fraction="null" id="76a5704a-3cc0-4a0d-9cb9-7028bde8571e" name="FechaCreacion" nullable="false" scale="10" size=""/>
+            <Attribute datatype="timestamp" defaultvalue="" extra="" fraction="null" id="899b85de-d2be-449b-a2d1-99c6be6ffc5f" name="UltimaVenta" nullable="true" scale="10" size=""/>
+            <Attribute datatype="timestamp" defaultvalue="" extra="" fraction="null" id="2f0c9c2d-7498-48f8-b758-96ae2b367ce6" name="UltimaModificacion" nullable="false" scale="10" size=""/>
+            <Index id="a6f1cf69-a719-4b07-814b-ea11fc19aa59" indextype="PRIMARYKEY" name="producto_pk">
+                <Indexattribute attributerefid="e28ce126-2c2b-4e20-a297-8fcee08d244b" id="f50aff29-3ba5-475a-a433-d405429e7afd"/>
+            </Index>
+        </Table>
+        <Table id="d48eb237-b272-49ba-8d9e-ff32cd1ab509" name="Factura" schema="">
+            <Property name="LOCATION" value="495:39"/>
+            <Comment>Anulada: indicador de factura anulada. Se inicializa en false.</Comment>
+            <Attribute datatype="serial" defaultvalue="" extra="" fraction="null" id="081fa53f-0898-4204-b3b5-d993bb15cda0" name="idFactura" nullable="false" scale="10" size=""/>
+            <Attribute datatype="varchar" defaultvalue="" extra="" fraction="null" id="e1958bbb-bd65-461c-8d2d-3fd67f39a2eb" name="NumeroFactura" nullable="false" scale="10" size="20"/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="8741e8d7-098e-4d88-baa1-e2d17ea29491" name="MontoBruto" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="86ec62fd-574d-4457-9278-0e9f0b7c5779" name="Descuento" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="f4174e85-c9e1-439e-9b71-2683682ae575" name="Impuesto" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="80c2131f-0d68-424a-a88c-7d5a3ec25538" name="MontoNeto" nullable="false" scale="10" size=""/>
+            <Attribute datatype="timestamp" defaultvalue="" extra="" fraction="null" id="a8281604-1e70-4541-bfff-5b54f0d475cb" name="FechaVenta" nullable="false" scale="10" size=""/>
+            <Attribute datatype="boolean" defaultvalue="" extra="" fraction="null" id="55b9aecd-0f5f-47c2-8f25-ddc87d61fd54" name="Anulada" nullable="false" scale="10" size=""/>
+            <Attribute datatype="serial" defaultvalue="" extra="" fraction="null" id="e536c07d-66cf-428c-9e63-87c2d4dccf5e" name="idCliente" nullable="false" scale="10" size=""/>
+            <Index id="5310342b-1d12-470d-8a53-c6b74c928375" indextype="PRIMARYKEY" name="factura_pk">
+                <Indexattribute attributerefid="081fa53f-0898-4204-b3b5-d993bb15cda0" id="680bcf15-54aa-4498-a4f4-817e9eefb0b1"/>
+            </Index>
+        </Table>
+        <Table id="4c0bbd8c-8b83-4c10-b278-aea1a9516c84" name="LineaFactura" schema="">
+            <Property name="LOCATION" value="491:343"/>
+            <Comment>Precio normal: precio sin descuento.
+
+Precio aplicado: precio con descuento.</Comment>
+            <Attribute datatype="int4" defaultvalue="" extra="" fraction="null" id="3597f22f-61e4-4feb-b6d5-31956070368f" name="Cantidad" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="887a0d94-38d6-4e0e-9c33-7bfa0a5da737" name="PrecioNormal" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="c34492d7-a9cd-43ac-b39e-22d30618da64" name="Descuento" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="6516b2c2-0d2e-4e53-96f7-337159a398c6" name="Impuesto" nullable="false" scale="10" size=""/>
+            <Attribute datatype="numeric" defaultvalue="" extra="" fraction="2" id="73b5a48a-39a6-47bc-8625-7d21f2de1983" name="TasaImpuesto" nullable="false" scale="10" size="5"/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="1c863c74-a64d-4abb-92c5-a9ff120b3e68" name="PrecioAplicado" nullable="false" scale="10" size=""/>
+            <Attribute datatype="serial" defaultvalue="" extra="" fraction="null" id="88382d77-fb6f-4de8-9ff6-626fc5273715" name="idFactura" nullable="false" scale="10" size=""/>
+            <Attribute datatype="serial" defaultvalue="" extra="" fraction="null" id="8078ccc3-2cd8-49a4-afc1-0890c7ab0ca7" name="idProducto" nullable="false" scale="10" size=""/>
+            <Index id="023e9e4e-8df1-4aea-84a3-7f2a3105deef" indextype="PRIMARYKEY" name="lineafactura_pk">
+                <Indexattribute attributerefid="88382d77-fb6f-4de8-9ff6-626fc5273715" id="d1104886-7d0f-4da0-a5c3-1a9392adbea6"/>
+                <Indexattribute attributerefid="8078ccc3-2cd8-49a4-afc1-0890c7ab0ca7" id="9ad25e4b-ae76-4276-b500-234bd5064a0e"/>
+            </Index>
+        </Table>
+    </Tables>
+    <Relations>
+        <Relation exportingtablerefid="5f80d095-860a-4383-a8b9-25670eec7454" id="5e5ad339-7be1-431b-bdc7-3125d7e05cbf" importingtablerefid="d48eb237-b272-49ba-8d9e-ff32cd1ab509" name="facturas_cliente_fk" ondelete="NOTHING" onupdate="NOTHING">
+            <Mapping exportingexpressionrefid="8e43d3a9-cf58-408a-833c-1dc77cf9c441" importingattributerefid="e536c07d-66cf-428c-9e63-87c2d4dccf5e"/>
+        </Relation>
+        <Relation exportingtablerefid="d48eb237-b272-49ba-8d9e-ff32cd1ab509" id="b038ab2e-c5d2-45d7-a38d-b79553035540" importingtablerefid="4c0bbd8c-8b83-4c10-b278-aea1a9516c84" name="lineas_factura_fk" ondelete="NOTHING" onupdate="NOTHING">
+            <Mapping exportingexpressionrefid="680bcf15-54aa-4498-a4f4-817e9eefb0b1" importingattributerefid="88382d77-fb6f-4de8-9ff6-626fc5273715"/>
+        </Relation>
+        <Relation exportingtablerefid="1dccae7f-04c1-4a77-933e-25740176b3a6" id="16f5b7e5-b20f-4361-a32d-f9d0d456c205" importingtablerefid="4c0bbd8c-8b83-4c10-b278-aea1a9516c84" name="producto_lineafactura_pk" ondelete="NOTHING" onupdate="NOTHING">
+            <Mapping exportingexpressionrefid="f50aff29-3ba5-475a-a433-d405429e7afd" importingattributerefid="8078ccc3-2cd8-49a4-afc1-0890c7ab0ca7"/>
+        </Relation>
+    </Relations>
+    <Views/>
+    <Subjectareas/>
+    <Comments/>
+</Model>
