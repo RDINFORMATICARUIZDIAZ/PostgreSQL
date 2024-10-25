@@ -57,3 +57,7 @@ ALTER TABLE LineaFactura ADD CONSTRAINT producto_lineafactura_pk FOREIGN KEY (FK
 ALTER TABLE LineaFactura RENAME COLUMN FK_Producto_idProducto TO idProducto;
 ALTER TABLE LineaFactura RENAME COLUMN FK_Factura_idFactura TO idFactura;
 ALTER TABLE LineaFactura ADD CONSTRAINT lineafactura_pk PRIMARY KEY(idFactura,idProducto);
+
+
+ALTER TABLE Producto
+	ALTER COLUMN UnidadesVendidas SET DEFAULT 0;

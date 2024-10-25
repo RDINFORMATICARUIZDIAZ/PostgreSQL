@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><Model version="5.0">
+    <Configuration>
+        <Property name="dialect" value="PostgresDialect"/>
+        <Property name="ALIAS" value="testuser"/>
+        <Property name="DRIVER" value="org.postgresql.Driver"/>
+        <Property name="PASSWORD" value="a.123456"/>
+        <Property name="PROMPTFORPASSWORD" value="false"/>
+        <Property name="URL" value="jdbc:postgresql://192.168.122.69:5432/laboratorio"/>
+        <Property name="USER" value="testuser"/>
+    </Configuration>
+    <CustomTypes/>
+    <Domains/>
+    <Tables>
+        <Table id="621d0080-2776-4f9c-b65a-b4f159ac0b30" name="tabla1" schema="">
+            <Property name="LOCATION" value="279:272"/>
+            <Attribute datatype="integer" defaultvalue="" extra="" fraction="null" id="7ebdd66c-81af-476e-8af9-afaf6b32ea24" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="character" defaultvalue="" extra="" fraction="null" id="a133ac18-d2a8-421a-a29a-281128b96bdb" name="nombres" nullable="false" scale="10" size="100"/>
+            <Attribute datatype="date" defaultvalue="" extra="" fraction="null" id="1c6e6c65-75b3-42f6-b461-a47756cb3773" name="fecha" nullable="false" scale="10" size=""/>
+            <Attribute datatype="money" defaultvalue="" extra="" fraction="null" id="6b26ac88-735b-4737-9351-f75d669fa1bf" name="valor" nullable="false" scale="10" size=""/>
+            <Index id="d9804942-dcfd-45fc-81ea-7aeb06427e7e" indextype="PRIMARYKEY" name="tabla1_pk">
+                <Indexattribute attributerefid="7ebdd66c-81af-476e-8af9-afaf6b32ea24" id="ca0a38dc-698a-4ba5-a1d9-c69138f3b3a1"/>
+            </Index>
+        </Table>
+    </Tables>
+    <Relations/>
+    <Views/>
+    <Subjectareas/>
+    <Comments/>
+</Model>
